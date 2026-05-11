@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DoGoBlock Link",
+  "version": "0.1.0",
+  "identifier": "br.com.dogoblock.link.offline",
+  "build": {
+    "frontendDist": "../web",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DoGoBlock Link",
+        "width": 420,
+        "height": 320,
+        "resizable": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["appimage", "nsis"],
+    "icon": ["icons/icon.png"],
+    "externalBin": ["binaries/node"],
+    "resources": {
+      "../sidecar/": "sidecar/",
+      "../openblock-link/src/": "openblock-link/src/",
+      "../openblock-link/node_modules/": "openblock-link/node_modules/",
+      "../openblock-link/tools/": "openblock-link/tools/",
+      "../openblock-link/firmwares/": "openblock-link/firmwares/"
+    },
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": false
+      }
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "openblock-link-offline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tauri wrapper for OpenBlock Link offline desktop builds.",
+  "type": "module",
+  "scripts": {
+    "prepare:openblock": "node scripts/prepare-openblock.mjs",
+    "prepare:sidecar": "node scripts/prepare-sidecar.mjs",
+    "tauri": "tauri",
+    "dev": "npm run prepare:sidecar && tauri dev",
+    "build:linux": "npm run prepare:openblock && npm run prepare:sidecar && tauri build --bundles appimage",
+    "build:windows": "npm run prepare:openblock && npm run prepare:sidecar && tauri build --bundles nsis"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}
+

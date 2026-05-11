@@ -1,0 +1,4 @@
+[submodule "openblock-link"]
+	path = openblock-link
+	url = https://github.com/educarbr11/openblock-link-dogo.git
+	ignore = untracked
